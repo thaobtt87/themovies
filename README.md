@@ -2,7 +2,7 @@
 
 This project was generated and implemented with:
 - [Angular CLI](https://github.com/angular/angular-cli) version 1.7.4.
-- [Angular](https://github.com/angular/angular-cli) version 5.2.10.
+- [Angular](https://angular.io/) version 5.2.10.
 - [Bootstrap](http://getbootstrap.com/) version 4.1.0
 
 ## Version 1
