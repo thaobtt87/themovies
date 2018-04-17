@@ -6,7 +6,7 @@ import * as _ from 'lodash';
 
 @Component({
   selector: 'app-movies',
-  templateUrl: './movies.component.html'  
+  templateUrl: './movies.component.html'
 })
 export class MoviesComponent implements OnInit {
   private popularUrl = environment.POPULAR_URL;
@@ -14,13 +14,13 @@ export class MoviesComponent implements OnInit {
   private upcomingUrl = environment.UPCOMING_URL;
   private currentUrl: string;
   private genres: Array<IGenres>;
-  public isFinish: boolean = false;
   private page: number;
   private perPage: number = 20;
   private totalPage: number;
   private currentMovies: Array<IMovies>;
   private newMovies: Array<IMovies>;
   private moviesToShow: Array<IMovies>;
+  public isFinish: boolean = false;
   public tabsToShow: Array<any> = [
     { id: 'tab-popular', title: 'Popular'},
     { id: 'tab-toprated', title: 'Top Rated'},
@@ -50,6 +50,10 @@ export class MoviesComponent implements OnInit {
     });
   }
 
+  private getGenres(genre_ids: Array<number>): Array<IGenres> {
+    return _.join(_.map(this.moviesService.getGenres(genre_ids), 'name'), ', ');
+  }
+
   public onScroll() {
     if (this.page <= this.totalPage) {
       this.page++;
@@ -57,10 +61,6 @@ export class MoviesComponent implements OnInit {
     } else {
       this.isFinish = true;
     }
-  }
-
-  private getGenres(genre_ids: Array<number>): Array<IGenres> {
-    return _.join(_.map(this.moviesService.getGenres(genre_ids), 'name'), ', ');
   }
 
   public beforeChange($event: NgbTabChangeEvent) {
