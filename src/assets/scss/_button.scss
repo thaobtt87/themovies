@@ -1,0 +1,31 @@
+.btn {
+    text-transform: uppercase;
+    font-size: 14px;
+
+    &.btn-pink {
+        background-color: $color-pink;
+        border-color: $color-pink;
+        margin-right: 10px;
+
+        &:hover {
+            background-color: lighten($color-pink, 10%);
+        }
+    
+        &:active,
+        &:focus {
+            outline: 0;
+            box-shadow: 0 0 0 .2rem rgba($color-pink, .25);
+        }                
+    }
+
+    &.btn-link {
+        color: $color-grey-light;
+
+        &:hover,
+        &:active,
+        &:focus {
+            text-decoration: none;
+            opacity: 0.8;
+        }                
+    }
+}

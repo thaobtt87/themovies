@@ -1,0 +1,35 @@
+// font
+$font-stack: 14px "Helvetica Neue", Arial, sans-serif !default;
+
+//Color palette
+$color-white: #ffffff !default;
+$color-white-grey: #f8f8f8 !default;
+$color-black: #000000 !default;
+$color-black-light: #0f0f14 !default;
+$color-pink: #ff0079 !default;
+$color-grey-extra-dark: #2f2f2f !default;
+$color-grey-darker: #5b5b5b !default;
+$color-grey-dark: #a4a4a4 !default;
+$color-grey-dark-light: #bbb;
+$color-grey-dark-lighter: #ccc;
+$color-grey-light: #e6e6e6 !default;
+$color-grey-lighter: #efefef !default;
+$color-grey-pale: #f9f9f9 !default;
+$color-indigo: #494c62 !default;
+$color-indigo-pale: #babbc3 !default;
+$color-indigo-light: #85868f !default;
+$color-navi: #80818a !default;
+
+//Application colors
+$background-main: $color-white-grey !default;
+$text-primary-color: $color-grey-dark !default;
+$text-movie-time: $color-indigo-pale !default;
+$text-movie-title: $color-indigo !default;
+
+//mixin
+@mixin ellipsis($width: 100%) {
+    max-width: $width;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

@@ -1,0 +1,104 @@
+.movies-content {
+    background: $background-main;
+    padding: 4vh 4vw;
+    position: relative;
+    
+    .nav-tabs {
+        .nav-item {
+            .nav-link {
+                border: none;
+                background: transparent;
+                border-radius: 0;
+                color: $color-navi;
+                font-size: 16px;
+                padding: 0.5rem 2rem;
+
+                &.active {
+                    color: $color-pink;
+                    border-bottom: 2px solid $color-pink;
+                }
+            }
+        }
+    }
+
+    .tab-content {
+        margin-top: 30px;
+    }
+
+    .genre-options {
+        button {
+            border: none;
+            background: transparent;
+            color: $color-navi;
+            cursor: pointer;
+
+            &:hover {
+                background: $color-pink;
+                color: $color-white;
+            }
+
+            &:active,
+            &:focus {
+                outline: 0;
+            }                       
+        }
+    }
+
+    .layout-options {
+        position: absolute;
+        top: 4vh;
+        right: 4vw;
+
+        .nav {
+            img {
+                width: 20px;
+                height: 20px;
+                margin-left: 0.5rem;
+            }
+        }
+    }
+
+    .card-movie-wrapper {
+        cursor: pointer;
+
+        .card-movie-top {
+            position: relative;
+
+            .movie-time {
+                position: absolute;
+                bottom: 10px;
+                left: 10px;
+                color: $text-movie-time;
+            }
+        }
+
+        .card-movie-body {
+            padding: 3%;
+            position: relative;
+
+            .movie-title {
+                color: $text-movie-title;
+                font-size: 15px;
+                margin-bottom: 0.5rem;
+
+                @include ellipsis(80%);
+            }
+
+            .movie-genres {
+                font-size: 12px;
+
+                @include ellipsis(80%);
+            }
+
+            .movie-vote {
+                position: absolute;
+                right: 3%;
+                top: 30%;
+                border: 1px solid $color-pink;
+                color: $color-pink;
+                padding: 2px 5px;
+                border-radius: 3px;                
+            }
+        }
+    }
+}

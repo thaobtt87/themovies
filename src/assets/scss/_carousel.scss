@@ -1,0 +1,101 @@
+.carousel {
+    &:active,
+    &:focus {
+        outline: 0;
+    }
+
+    .carousel-indicators {
+        bottom: 0;
+    
+        li {
+            height: 10px;
+            margin-right: 5px;
+            margin-left: 5px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        .active{ 
+            background-color: $color-pink;
+        }
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+        display: none;
+    }
+
+    .carousel-caption {
+        text-align: left;
+        left: 5%;
+
+        .title {
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        p {
+            color: $color-grey-lighter;
+            word-spacing: 30px;
+            padding-right: 20px;
+            border-right: 1px solid $color-grey-lighter;
+            display: inline-block;
+        }
+
+        span {
+            margin-left: 20px;
+        }        
+    }
+
+    .carousel-rating {
+        position: absolute;
+        right: 5%;
+        bottom: 20px;
+        left: initial;
+        z-index: 10;
+        padding-top: 20px;
+        padding-bottom: 20px;
+
+        .rating-content {
+            border: 1px solid $color-grey-dark;
+            padding: 10px 15px;
+            border-radius: 3px;
+            background: $color-black-light;
+
+            span {
+                &:first-child {
+                    color: $color-white;
+                    font-size: 14px;
+                    margin-right: 2px;
+                }
+                
+                &.vote-average {
+                    border: 1px solid $color-grey-dark;
+                    color: $color-white;
+                    padding: 2px 5px;
+                    border-radius: 3px;
+                }
+
+                font-size: 12px;
+            }
+
+            ngb-rating {
+                span {
+                    font-size: 25px;
+                    margin-right: 5px;
+                    color: $color-pink;
+                }
+
+                &:active,
+                &:focus {
+                    outline: 0;
+                    box-shadow: none;
+                }                  
+            }
+        }
+
+        @media (max-width: 767.98px) {
+            display: none;
+        }
+    }
+
+}

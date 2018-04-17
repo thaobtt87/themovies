@@ -1,0 +1,156 @@
+@import "variables";
+@import "carousel";
+@import "button";
+@import "movies";
+
+body {
+    font: $font-stack;
+    color: $text-primary-color;
+    margin: 0;
+    padding: 0;
+    background: $color-black;
+}
+
+.main-container {
+    position: relative;
+
+    #logo {
+        position: absolute;
+        top: 10px;
+        left: 5%;
+        z-index: 999;
+        color: $color-white;
+        font-size: 18px;
+    }
+
+    #login {
+        position: absolute;
+        top: 10px;
+        right: 5%;
+        z-index: 999;
+
+        .btn-search {
+            background-image: url('/assets/images/search-icon.png');
+            background-repeat: no-repeat;
+            background-size: 20px;
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            display: inline-block;
+            vertical-align: middle; 
+        }         
+    }   
+    
+    footer {
+        height: 200px;
+        width: 100%;
+        background: $color-white;
+
+        .footer-content {
+            padding: 3vh 4vw;
+
+            .footer-info {
+                border-top: 1px solid $color-grey-pale;
+                margin-top: 15px;
+                padding-top: 15px;
+
+                .copyright {
+                    font-size: 12px;
+                    color: $color-indigo-pale;
+                }
+            }
+
+            h3 {
+                color: $text-movie-title;
+                font-size: 20px;
+            }
+    
+            .nav {
+                a {
+                    color: $color-navi;
+                    
+                    &:hover,
+                    &.active {
+                        color: $color-pink;
+                    }
+                }
+    
+                img {
+                    width: 25px;
+                    height: 25px;
+                    margin-right: 0.5rem;
+                }
+            }            
+        }
+    }
+}
+
+//iphone 5
+@media screen and (device-aspect-ratio: 40/71) {
+    .main-container {
+        #logo {
+            font-size: 1px;
+        }
+
+        #login {
+            .button-list {
+                .btn {
+                    padding: 1px 4px;
+                }
+            }        
+        }
+    }
+}
+
+@media (max-width: 767.98px) {
+    .carousel-caption {
+        padding-bottom: 5px;
+
+        .title {
+            font-size: 14px;
+        }
+
+        .description,
+        .button-list {
+            display: none;
+        }
+    }
+
+    .main-container {
+        #logo {
+            font-size: 12px;
+        }
+
+        #login {
+            .btn-search {
+                background-size: 15px;
+                width: 15px;
+                height: 15px;
+            }
+
+            .button-list {
+                .btn {
+                    font-size: 12px;
+                    padding: 1px 6px;
+                }
+            }        
+        }
+        footer {
+            .footer-content {
+                h3 {
+                    font-size: 15px;
+                }
+                .nav {
+                    &.navi-footer {
+                        justify-content: flex-start !important;
+                        flex-wrap: nowrap;
+                    }
+                    a {
+                        font-size: 12px;
+                        padding: 1px 5px;
+                    }
+                }            
+            }
+        }        
+    }  
+}
