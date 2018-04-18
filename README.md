@@ -18,7 +18,7 @@ This project was generated and implemented with:
 
 ### API
 
-- The movie informations getting from TheMovieDb(https://developers.themoviedb.org) Version 3
+- The movie informations getting from [TheMovieDb](https://developers.themoviedb.org) Version 3
 - API token: `a7b3c9975791294647265c71224a88ad`
 
 ### Demo
