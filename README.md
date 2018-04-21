@@ -28,5 +28,7 @@ Demo [The Movie Box](http://buithanhthao.atwebpages.com)
 ### Usage
 
 - `git clone`
+- Install the Angular CLI `npm install -g @angular/cli`
 - `npm install`
-- Run `ng serve` for a dev server
+- Install Bootstrap `npm install bootstrap`
+- Run `ng serve -o` for a dev server
