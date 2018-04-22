@@ -1,0 +1,51 @@
+<div *ngIf="movie" class="row justify-content-start movie-detail">
+  <div class="col-3">
+    <img src="https://image.tmdb.org/t/p/original{{movie.poster_path}}" alt="{{movie.poster_path}}" class="img-fluid shadow rounded"
+    />
+  </div>
+  <div class="col">
+    <h3 class="title">{{movie.title}}
+      <span>({{movie.release_date | date: 'yyyy'}})</span>
+    </h3>
+    <div class="options ml-1 mt-3 mb-3 row">
+      <ng-template #tipVoteCount>Rating based on {{movie.vote_count | number}}</ng-template>
+      <ng-template #tipWishList>Login to add this movie to your favorite list</ng-template>
+      <ng-template #tipRating>Login to rate this movie</ng-template>
+      <span class="d-inline-block mr-2 rounded-circle option-icon" placement="bottom" [ngbTooltip]="tipVoteCount">
+        <i>{{movie.vote_average}}</i>
+      </span>
+      <span class="d-inline-block mr-2 rounded-circle option-icon" placement="bottom" [ngbTooltip]="tipWishList">
+        <i class="mdi mdi-favorite"></i>
+      </span>
+      <span class="d-inline-block rounded-circle option-icon" placement="bottom" [ngbTooltip]="tipRating">
+        <i class="mdi mdi-star"></i>
+      </span>
+    </div>
+    <div>
+      <h6 class="title">Overview</h6>
+      <p class="text-justify">{{movie.overview}}</p>
+    </div>
+    <div class="row">
+      <div class="col">
+        <h6 class="title">Runtime</h6>
+        <p>{{movie.runtime | runtime}}</p>
+      </div>
+      <div class="col">
+        <h6 class="title">Genres</h6>
+        <p>
+          <span class="p-1 rounded border mr-2 bg-light" *ngFor="let genre of movie.genres">{{genre.name}}</span>
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <h6 class="title">Budget</h6>
+        <p>{{movie.budget | currency}}</p>
+      </div>
+      <div class="col">
+        <h6 class="title">Revenue</h6>
+        <p>{{movie.revenue | currency}}</p>
+      </div>
+    </div>
+  </div>
+</div>

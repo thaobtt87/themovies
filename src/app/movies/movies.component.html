@@ -5,7 +5,7 @@
       <ng-template ngbTabContent>
         <div class="row justify-content-start">
           <div class="col-3" *ngFor="let movie of moviesToShow">
-            <div class="card-movie-wrapper shadow mb-4">
+            <div class="card-movie-wrapper shadow mb-4" routerLink="/movie/{{movie.id}}">
               <div class="card-movie-top">
                 <img src="https://image.tmdb.org/t/p/original{{movie.poster_path}}" alt="{{movie.poster_path}}" class="img-fluid" />
                 <span class="movie-time">{{movie.release_date | date: 'yyyy'}}</span>

@@ -2,6 +2,7 @@
 @import "carousel";
 @import "button";
 @import "movies";
+@import "movie-detail";
 
 body {
     font: $font-stack;
@@ -20,7 +21,7 @@ body {
         left: 5%;
         z-index: 999;
         color: $color-white;
-        font-size: 18px;
+        font-size: 20px;
     }
 
     #login {
@@ -39,9 +40,23 @@ body {
             display: inline-block;
             vertical-align: middle; 
         }         
-    }   
-    
-    footer {
+    }
+
+    .home-link {
+        cursor: pointer;
+
+        &:active,
+        &:focus {
+            outline: 0;
+        }         
+    }
+
+    .main-content {
+        background: $background-main;
+        padding: 4vh 4vw;
+    }
+
+    .footer {
         height: 200px;
         width: 100%;
         background: $color-white;
@@ -135,7 +150,8 @@ body {
                 }
             }        
         }
-        footer {
+
+        .footer {
             .footer-content {
                 h3 {
                     font-size: 15px;

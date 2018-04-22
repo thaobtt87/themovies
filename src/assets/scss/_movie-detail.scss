@@ -1,0 +1,57 @@
+.movie-detail {
+    color: $color-grey-darker;
+
+    .title {
+        color: $text-movie-title;
+        font-weight: 800;
+
+        span {
+            font-size: 1rem;
+            display: inline-block;
+            vertical-align: middle;
+        }
+    }
+
+    .options {
+        span {
+            cursor: pointer;
+            border: 1px solid $color-pink;
+            color: $color-pink;
+
+            &:hover {
+                color: $color-white;
+                background: $color-pink;
+            }
+
+            &.option-icon {
+                width: 35px;
+                height: 35px;
+                position: relative;
+
+                i {
+                    position: absolute;
+                    top: 8px;
+                    left: 6px;
+                    font-style: normal;
+
+                    &.mdi {
+                        top: 6px;
+                        font-size: 1.5em;
+                    }                    
+                }
+            }
+        }
+
+        .tooltip {
+            .tooltip-inner {
+                background: $color-pink;
+            }
+    
+            .arrow {
+                &::before {
+                    border-bottom-color: $color-pink !important;
+                }
+            }
+        }
+    }
+}

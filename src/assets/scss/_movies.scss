@@ -1,6 +1,4 @@
 .movies-content {
-    background: $background-main;
-    padding: 4vh 4vw;
     position: relative;
     
     .nav-tabs {
@@ -46,8 +44,8 @@
 
     .layout-options {
         position: absolute;
-        top: 4vh;
-        right: 4vw;
+        top: 10px;
+        right: 0;
 
         .nav {
             img {

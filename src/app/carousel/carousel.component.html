@@ -1,25 +1,24 @@
-<ngb-carousel *ngIf="images">
-  <ng-template ngbSlide *ngFor="let banner of images">
-    <img src="assets/images/banner/{{banner.src}}" alt="{{banner.name}}" class="img-fluid" />
+<ngb-carousel *ngIf="movies">
+  <ng-template ngbSlide *ngFor="let movie of movies | slice:0:3">
+    <img src="https://image.tmdb.org/t/p/original{{movie.backdrop_path}}" alt="{{movie.title}}" class="img-fluid" />
     <div class="carousel-caption">
-      <h2 class="title">{{banner.name}}</h2>
+      <h2 class="title">{{movie.title}}</h2>
       <div class="description">
-        <p>{{banner.genres}}</p>
-        <span>Duration: {{banner.duration}}</span>
+        <p>{{getGenres(movie.genre_ids)}}</p>
       </div>
       <div class="button-list">
         <button type="button" class="btn btn-primary btn-pink">Watch Movie</button>
-        <button type="button" class="btn btn-outline-light">View Info</button>
+        <button type="button" class="btn btn-outline-light" routerLink="/movie/{{movie.id}}">View Info</button>
         <button type="button" class="btn btn-link">+ Add to wishlist</button>
       </div>
     </div>
     <div class="carousel-rating">
       <div class="rating-content">
         <span>Rating</span>
-        <span>based on {{banner.vote_count | number}}</span>
+        <span>based on {{movie.vote_count | number}}</span>
         <div>
-          <ngb-rating [rate]="banner.vote_average"></ngb-rating>
-          <span class="vote-average">{{banner.vote_average}}</span>
+          <ngb-rating [rate]="movie.vote_average"></ngb-rating>
+          <span class="vote-average">{{movie.vote_average}}</span>
         </div>
       </div>
     </div>
