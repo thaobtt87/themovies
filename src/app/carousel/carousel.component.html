@@ -7,9 +7,10 @@
         <p>{{getGenres(movie.genre_ids)}}</p>
       </div>
       <div class="button-list">
-        <button type="button" class="btn btn-primary btn-pink">Watch Movie</button>
+        <ng-template #addWishList>Login to add this movie to your favorite list</ng-template>
+        <button type="button" class="btn btn-primary btn-pink" routerLink="/movie/{{movie.id}}">Watch Movie</button>
         <button type="button" class="btn btn-outline-light" routerLink="/movie/{{movie.id}}">View Info</button>
-        <button type="button" class="btn btn-link">+ Add to wishlist</button>
+        <button type="button" class="btn btn-link" placement="right" [ngbTooltip]="addWishList">+ Add to wishlist</button>
       </div>
     </div>
     <div class="carousel-rating">
